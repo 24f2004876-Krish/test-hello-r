@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World App</title>
+    <style>
+        /* Basic reset for margin and padding */
+        body, h1, button {
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Styling the page */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2em;
+            color: #333;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="greeting">Hello, World!</h1>
+        <button onclick="handleClick()">Click Me</button>
+    </div>
+
+    <script>
+        // Function to handle button click
+        function handleClick() {
+            alert('Button clicked!');
+        }
+
+        // Function to handle query parameters
+        function handleQueryParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const url = urlParams.get('url');
+            if (url) {
+                document.getElementById('greeting').textContent = `Hello, ${url}!`;
+            }
+        }
+
+        // Initial call to handle query parameters
+        handleQueryParams();
+    </script>
+</body>
+</html>
